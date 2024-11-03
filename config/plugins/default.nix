@@ -18,6 +18,7 @@
     ./telescope.nix
     ./treesitter.nix
     ./zen-mode.nix
+    ./tmux-navigation.nix
   ];
 
   colorscheme = "catppuccin";
