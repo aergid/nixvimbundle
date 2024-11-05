@@ -19,6 +19,7 @@
     ./treesitter.nix
     ./zen-mode.nix
     ./tmux-navigator.nix
+    ./yazi-nvim.nix
   ];
 
   colorscheme = "catppuccin";
@@ -96,7 +97,6 @@
   extraPlugins =
     # For plugins already packaged as nixpkgs
     with pkgs.vimPlugins; [
-      yazi-nvim
       nvim-web-devicons
       (pkgs.vimUtils.buildVimPlugin {
         name = "floating-help";
