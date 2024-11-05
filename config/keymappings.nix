@@ -15,6 +15,12 @@
         inherit action key;
       })
       {
+        "<leader>-".__raw = ''
+          function()
+            require("yazi").yazi()
+            end
+        '';
+
         "<Space>" = "<NOP>";
 
         # Esc to clear search results

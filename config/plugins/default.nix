@@ -96,6 +96,7 @@
   extraPlugins =
     # For plugins already packaged as nixpkgs
     with pkgs.vimPlugins; [
+      yazi-nvim
       nvim-web-devicons
       (pkgs.vimUtils.buildVimPlugin {
         name = "floating-help";
