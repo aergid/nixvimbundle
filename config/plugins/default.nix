@@ -70,6 +70,7 @@
     leap.enable = true;
     web-devicons.enable = true;
     which-key.enable = true;
+    fugitive.enable = true;
     # mini = {
     #   enable = true;
     #   mockDevIcons = true;
