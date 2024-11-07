@@ -38,7 +38,7 @@
       ];
       post_restore_cmds = [
         "Neotree filesystem show"
-        "wincmd ="
+        # "wincmd ="
       ];
     };
   };
