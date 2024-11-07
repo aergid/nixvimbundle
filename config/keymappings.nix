@@ -4,7 +4,7 @@
 }: {
   globals = {
     mapleader = " ";
-    maplocalleader = " ";
+    maplocalleader = ",";
   };
 
   keymaps = let
@@ -21,8 +21,6 @@
             end
         '';
 
-        "<Space>" = "<NOP>";
-
         # Esc to clear search results
         "<esc>" = ":noh<CR>";
 
@@ -35,8 +33,10 @@
         "<C-c>" = ":b#<CR>";
 
         # chdir
-        "<leader>cd" = ":lcd %:p:h<CR>:pwd<CR>";
-        "<leader>co" = ":lcd -<CR>:pwd<CR>";
+        "<leader>ld" = ":lcd %:p:h<CR>:pwd<CR>";
+        "<leader>lo" = ":lcd -<CR>:pwd<CR>";
+        "<leader>cd" = ":cd %:p:h<CR>:pwd<CR>";
+        "<leader>co" = ":cd -<CR>:pwd<CR>";
 
         # navigate to left/right window
         "<A-Left>" = ":wincmd h<CR>";
@@ -44,6 +44,22 @@
         "<A-Down>" = ":wincmd j<CR>";
         "<A-Up>" = ":wincmd k<CR>";
 
+        #navigate in quickfix list and locallist
+        "<leader>qn" = ":cnext<CR>";
+        "<leader>qp" = ":cprevious<CR>";
+        "<leader>ln" = ":lnext<CR>";
+        "<leader>lp" = ":lprevious<CR>";
+
+
+        #diff handling
+        "<leader>gs" = ":tab Git<CR>";
+        "<leader>gd" = ":tab Gvdiffsplit<CR>";
+        "gdl" = ":diffget //2<CR>";
+        "gdr" = ":diffget //3<CR>";
+
+        #increment/decrement numbers
+        "+" = "<c-a>";
+        "-" = "<c-x>";
 
         # Press 'H', 'L' to jump to start/end of a line (first/last character)
         L = "$";
@@ -73,6 +89,9 @@
         "<" = "<gv";
         "<TAB>" = ">gv";
         "<S-TAB>" = "<gv";
+
+        "+" = "g<c-a>";
+        "-" = "g<c-x>";
 
         # move selected line / block of text in visual mode
         "<S-Up>" = ":m '<-2<CR>gv=gv";
