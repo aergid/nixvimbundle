@@ -6,7 +6,7 @@
 
     lspkind = {
       enable = true;
-
+      # lspkind integration with cmp
       cmp = {
         enable = true;
         menu = {
@@ -20,34 +20,65 @@
       };
     };
 
-    cmp.enable = true;
-    cmp.settings = {
-      autoEnableSources = true;
-      snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
+    cmp = {
+      enable = true;
 
-      sources = [
-        {name = "path";}
-        {name = "nvim_lsp";}
-        {name = "luasnip";}
+      cmdline =
+        let
+          search = {
+            mapping = { __raw = "cmp.mapping.preset.cmdline()"; };
+            sources = [{ name = "buffer"; }];
+          };
+        in
         {
-          name = "buffer";
-          # Words from other open buffers can also be suggested.
-          option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-        }
-        {name = "neorg";}
-      ];
+          "/" = search;
+          "?" = search;
+          ":" = {
+            mapping = { __raw = "cmp.mapping.preset.cmdline()"; };
+            sources = [{ name = "cmdline"; }];
+          };
+        };
 
-      mapping = {
-        "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-        "<C-f>" = "cmp.mapping.scroll_docs(4)";
-        "<C-Space>" = "cmp.mapping.complete()";
-        "<C-e>" = "cmp.mapping.close()";
-        "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-        "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
-        "<CR>" = "cmp.mapping.confirm({ select = true })";
+      settings = {
+        autoEnableSources = true;
+        snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
+
+        sources = [
+          { name = "path"; }
+          { name = "luasnip"; }
+          { name = "dictionary"; }
+          { name = "nvim_lsp"; }
+          { name = "neorg"; }
+          {
+            name = "buffer";
+            # Words from other open buffers can also be suggested.
+            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+          }
+        ];
+
+        window = {
+            completion.__raw = "cmp.config.window.bordered()";
+            documentation.__raw = "cmp.config.window.bordered()";
+        };
+
+        mapping = {
+          __raw = ''
+            cmp.mapping.preset.insert({
+              ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i','c'}), -- 'c' for Cycle?
+              ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i','c'}),
+              ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i','c'}),
+              ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i','c'}),
+              ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+              ['<C-d>'] = cmp.mapping.scroll_docs(4),
+              ['<C-Space>'] = cmp.mapping.complete(),
+              ['<C-e>'] = cmp.mapping.abort(),
+              ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }), -- change to Insert if don't like
+            })
+          '';
+        };
       };
     };
 
-
   };
+
 }
