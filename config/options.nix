@@ -64,6 +64,9 @@
     #   broken after white space to get this width.
 
     # Folding
-    foldlevel = 99; # Folds with a level higher than this number will be closed
+    foldcolumn = "0";
+    foldlevel = 99;
+    foldlevelstart = 99;
+    foldenable = true;
   };
-  }
+}

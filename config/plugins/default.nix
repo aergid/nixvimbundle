@@ -20,6 +20,7 @@
     ./zen-mode.nix
     ./tmux-navigator.nix
     ./yazi-nvim.nix
+    ./nvim-ufo.nix
   ];
 
   colorscheme = "catppuccin";
