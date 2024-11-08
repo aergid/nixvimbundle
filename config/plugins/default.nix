@@ -14,7 +14,6 @@
     ./markdown-preview.nix
     ./neo-tree.nix
     ./neorg.nix
-    ./tagbar.nix
     ./telescope.nix
     ./treesitter.nix
     ./zen-mode.nix
