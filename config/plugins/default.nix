@@ -68,6 +68,7 @@
 
   plugins = {
     leap.enable = true;
+    barbecue.enable = true;
     web-devicons.enable = true;
     which-key.enable = true;
     fugitive.enable = true;
@@ -103,9 +104,7 @@
     # For plugins already packaged as nixpkgs
     with pkgs.vimPlugins; [
       actions-preview-nvim
-      nvim-navic
       nvim-web-devicons
-      barbecue-nvim
       (pkgs.vimUtils.buildVimPlugin {
         name = "highlight-undo";
         src = pkgs.fetchFromGitHub {
@@ -119,7 +118,5 @@
 
   extraConfigLua = ''
     require('highlight-undo').setup({})
-    require('barbecue').setup({})
-    require("barbecue.ui").toggle(true)
   '';
 }

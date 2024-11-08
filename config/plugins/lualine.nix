@@ -4,8 +4,6 @@
 
     settings.options = {
 			theme = "palenight";
-
-
 			global_status = true;
 
 			component_separators = {
@@ -24,11 +22,10 @@
 			sections = {
 				lualine_a = ["mode"];
 				lualine_b = ["branch"];
-				lualine_c = ["filename" "diff"];
+				lualine_c = ["filename" "diff" "searchcount"];
 
 				lualine_x = [
 					"diagnostics"
-
 					# Show active language server
 					{
 						name.__raw = ''
@@ -56,7 +53,16 @@
 					"filetype"
 				];
 			};
+
+      inactive_sections = {
+        lualine_a = [];
+        lualine_b = [];
+        lualine_c = ["filename"];
+        lualine_x = ["location"];
+        lualine_y = [];
+        lualine_z = [];
+      };
 		};
 
-    };
+  };
 }
