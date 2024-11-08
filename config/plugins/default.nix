@@ -2,6 +2,7 @@
 {
   imports = [
     ./auto-save.nix
+    # ./barbar.nix
     ./auto-session.nix
     ./comment.nix
     ./floaterm.nix
