@@ -6,15 +6,14 @@
 			theme = "palenight";
 			global_status = true;
 
-			component_separators = {
-					left = "";
-					right = "";
-				};
-
-			section_separators = {
-				left = "";
-				right = "";
-			};
+      component_separators = {
+        left = "";
+        right = "";
+      };
+      section_separators = {
+        left = "";
+        right = "";
+      };
 
 			# +-------------------------------------------------+
 			# | A | B | C                             X | Y | Z |
