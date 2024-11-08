@@ -11,7 +11,7 @@
   keymaps = [
     {
       mode = "n";
-      key = "<leader>m";
+      key = "<leader>p";
       action = ":MarkdownPreview<cr>";
       options.silent = true;
     }

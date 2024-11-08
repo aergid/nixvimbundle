@@ -15,14 +15,26 @@
   keymaps = [
     {
       mode = "n";
-      key = "<leader>m";
-      action = ":Neorg journal"; # No <CR> for interactive select
+      key = "<leader>mt";
+      action = ":Neorg journal today<CR>";
       options.silent = true;
     }
     {
       mode = "n";
-      key = "<leader>w";
-      action = ":Neorg workspace"; # No <CR> for interactive select
+      key = "<leader>my";
+      action = ":Neorg journal yesterday<CR>";
+      options.silent = true;
+    }
+    {
+      mode = "n";
+      key = "<leader>wh";
+      action = ":Neorg workspace home<CR>";
+      options.silent = true;
+    }
+    {
+      mode = "n";
+      key = "<leader>ww";
+      action = ":Neorg workspace work<CR>";
       options.silent = true;
     }
   ];
