@@ -12,6 +12,21 @@
   #   ];
   # };
 
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>m";
+      action = ":Neorg journal"; # No <CR> for interactive select
+      options.silent = true;
+    }
+    {
+      mode = "n";
+      key = "<leader>w";
+      action = ":Neorg workspace"; # No <CR> for interactive select
+      options.silent = true;
+    }
+  ];
+
   plugins.neorg = {
     enable = true;
 
@@ -21,14 +36,6 @@
       "core.keybinds".config.hook.__raw = ''
         function(keybinds)
           keybinds.unmap('norg', 'n', '<C-s>')
-
-          keybinds.map(
-            'norg',
-            'n',
-            '<leader>c',
-            ':Neorg toggle-concealer<CR>',
-            {silent=true}
-          )
         end
       '';
 

@@ -32,6 +32,10 @@
         # back and fourth between the two most recent files
         "<C-c>" = ":b#<CR>";
 
+        # Windows
+        "<leader>sw" = "<C-w>x";
+        "<leader>o" = ":only<CR>";
+
         # chdir
         "<leader>ld" = ":lcd %:p:h<CR>:pwd<CR>";
         "<leader>lo" = ":lcd -<CR>:pwd<CR>";
