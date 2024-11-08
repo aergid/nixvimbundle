@@ -67,6 +67,11 @@
   };
 
   plugins = {
+    vim-bbye = {
+      enable = true;
+      keymaps.bdelete = "<C-x>";
+      keymaps.bwipeout = "<C-d>";
+    };
     leap.enable = true;
     barbecue.enable = true;
     web-devicons.enable = true;
