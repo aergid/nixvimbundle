@@ -16,18 +16,6 @@
   keymaps = [
     {
       mode = "n";
-      key = "<leader>dc";
-      action = ":tab split<CR>:Gitsigns diffthis vertical=true<CR>";
-      options.silent = true;
-    }
-    {
-      mode = "n";
-      key = "<leader>dp";
-      action = ":tab split<CR>:Gitsigns diffthis ~ vertical=true<CR>";
-      options.silent = true;
-    }
-    {
-      mode = "n";
       key = "<leader>td";
       action = ":Gitsigns toggle_deleted<CR>";
       options.silent = true;
