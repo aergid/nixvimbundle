@@ -1,5 +1,4 @@
-{
-  opts.completeopt = ["menu" "menuone" "noselect"];
+{ opts.completeopt = ["menu" "menuone" "noselect"];
 
   plugins = {
     luasnip.enable = true;
@@ -43,6 +42,13 @@
         autoEnableSources = true;
         snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
 
+# https://docs.astronvim.com/recipes/cmp/
+/*
+      { name = "nvim_lsp", priority = 1000 },
+      { name = "luasnip", priority = 750 },
+      { name = "buffer", priority = 500 },
+      { name = "path", priority = 250 },
+*/
         sources = [
           { name = "path"; }
           { name = "luasnip"; }

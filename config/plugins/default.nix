@@ -96,9 +96,14 @@
     oil.enable = true;
   };
 
+  extraPackages = with pkgs; [
+    nixfmt-rfc-style
+  ];
+
   extraPlugins =
     # For plugins already packaged as nixpkgs
     with pkgs.vimPlugins; [
+      actions-preview-nvim
       nvim-web-devicons
       (pkgs.vimUtils.buildVimPlugin {
         name = "highlight-undo";
