@@ -16,13 +16,13 @@
     {
       mode = "n";
       key = "<leader>m";
-      action = ":Neorg journal"; # No <CR> for interactive select
+      action = ":Neorg journal "; # No <CR> for interactive select
       options.silent = true;
     }
     {
       mode = "n";
       key = "<leader>w";
-      action = ":Neorg workspace"; # No <CR> for interactive select
+      action = ":Neorg workspace "; # No <CR> for interactive select
       options.silent = true;
     }
   ];
