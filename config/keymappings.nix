@@ -53,7 +53,7 @@
 
         #diff handling
         "<leader>gs" = ":tab Git<CR>";
-        "<leader>gd" = ":tab Gvdiffsplit<CR>";
+        "<leader>gd" = ":tabedit %<CR>:Gdiff<CR>";
         "gdl" = ":diffget //2<CR>";
         "gdr" = ":diffget //3<CR>";
 

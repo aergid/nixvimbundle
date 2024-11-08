@@ -3,31 +3,28 @@
     {
       mode = "n";
       key = "<leader>nt";
-      action = ":Neotree action=focus reveal toggle<CR>";
+      action = ":Neotree action=show reveal toggle<CR>";
       options.silent = true;
     }
-    #Some times it doesn't actually focus from a split on a first time,
-    #so we double commands
     {
       mode = "n";
       key = "<leader>nf";
-      action = ":Neotree focus<CR>:Neotree focus<CR>";
+      action = ":Neotree action=show reveal<CR>";
       options.silent = true;
     }
     {
       mode = "n";
       key = "<leader>nr";
-      action = ":Neotree reveal<CR>:Neotree reveal<CR>";
+      action = ":Neotree action=focus reveal<CR>";
       options.silent = true;
     }
     {
       mode = "n";
       key = "<leader>ng";
-      action = ":Neotree float git_status<CR>";
+      action = ":Neotree action=focus source=git_status<CR>";
       options.silent = true;
     }
   ];
-
 
   plugins.neo-tree = {
     enable = true;
