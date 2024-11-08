@@ -29,13 +29,13 @@
         cmake.enable = true;
         # cssls.enable = true;
         dockerls.enable = true;
-        docker-compose-language-service.enable = true;
+        docker_compose_language_service.enable = true;
         # gopls.enable = true;
         graphql.enable = true;
         html.enable = true;
         jsonls.enable = true;
         ltex.enable = true;
-        lua-ls.enable = true;
+        lua_ls.enable = true;
         metals.enable = true;
         nixd = {
           enable = true;
@@ -76,7 +76,7 @@
         # };
         #
         sqls.enable = true;
-        tsserver.enable = true;
+        ts_ls.enable = true;
         yamlls.enable = true;
         texlab.enable = true;
       };
