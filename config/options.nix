@@ -16,6 +16,18 @@
     providers.wl-copy.enable = true;
   };
 
+  autoCmd = [
+    {
+      event = [
+        "BufReadPost"
+      ];
+      pattern = [
+        "quickfix"
+      ];
+      command = "nnoremap <buffer> <CR> <CR>";
+    }
+  ];
+
   opts = {
     sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions";
     updatetime = 100; # Faster completion
