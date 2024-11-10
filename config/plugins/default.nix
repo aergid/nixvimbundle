@@ -20,6 +20,7 @@
     ./tmux-navigator.nix
     ./yazi-nvim.nix
     ./nvim-ufo.nix
+    ./incline.nix
   ];
 
   colorscheme = "catppuccin";
@@ -73,7 +74,7 @@
       keymaps.bwipeout = "<C-d>";
     };
     leap.enable = true;
-    barbecue.enable = true;
+    # barbecue.enable = true;
     web-devicons.enable = true;
     which-key.enable = true;
     fugitive.enable = true;
