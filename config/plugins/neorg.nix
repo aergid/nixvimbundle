@@ -45,11 +45,9 @@
     modules = {
       "core.defaults".__empty = null;
 
-      "core.keybinds".config.hook.__raw = ''
-        function(keybinds)
-          keybinds.unmap('norg', 'n', '<C-s>')
-        end
-      '';
+      "core.keybinds".config = {
+        default_keybinds = false;
+      };
 
       "core.dirman" = {
         config = {
