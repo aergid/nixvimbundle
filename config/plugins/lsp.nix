@@ -21,7 +21,6 @@
           gD = "type_definition";
           "<F2>" = "rename";
         };
-
       };
 
       servers = {
@@ -31,7 +30,7 @@
         dockerls.enable = true;
         docker_compose_language_service.enable = true;
         # gopls.enable = true;
-        graphql.enable = true;
+        # graphql.enable = true;
         html.enable = true;
         jsonls.enable = true;
         ltex.enable = true;
@@ -45,7 +44,7 @@
               expr = "import <nixpkgs> {}";
             };
             formatting = {
-              command = [ "nixpkgs-fmt" ];
+              command = ["nixpkgs-fmt"];
             };
             options = {
               nixos = {
@@ -84,18 +83,18 @@
   };
 
   extraConfigLua = ''
-		do
-			require("actions-preview").setup({
-				diff = {
-					ignore_whitespace = true,
-				},
-				highlight_command = {
-					require("actions-preview.highlight").diff_highlight()
-				},
-				backend = { "telescope" },
-			})
-		end
-	'';
+    do
+    	require("actions-preview").setup({
+    		diff = {
+    			ignore_whitespace = true,
+    		},
+    		highlight_command = {
+    			require("actions-preview.highlight").diff_highlight()
+    		},
+    		backend = { "telescope" },
+    	})
+    end
+  '';
 
   extraConfigLuaPre = ''
     do
@@ -131,5 +130,4 @@
       command = "setlocal spell";
     }
   ];
-
 }

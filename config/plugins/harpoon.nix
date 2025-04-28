@@ -1,18 +1,18 @@
 {
   plugins.harpoon = {
     enable = true;
-
-    keymapsSilent = true;
-
-    keymaps = {
-      addFile = "<leader>a";
-      toggleQuickMenu = "<leader>e";
-      navFile = {
-        "1" = "<C-j>";
-        "2" = "<C-k>";
-        "3" = "<C-l>";
-        "4" = "<C-m>";
-      };
-    };
   };
+
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>a";
+      action.__raw = "function() require'harpoon':list():add() end";
+    }
+    {
+      mode = "n";
+      key = "<leader>e";
+      action.__raw = "function() require'harpoon'.ui:toggle_quick_menu(require'harpoon':list()) end";
+    }
+  ];
 }
